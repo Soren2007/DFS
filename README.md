@@ -1,26 +1,26 @@
-# الگوریتم DFS
+# DFS Algorithm
 
-الگوریتم DFS (Depth-First Search) یکی از الگوریتم‌های جستجوی گراف و درخت‌ها است که به شیوه جستجوی عمق‌اول عمل می‌کند. این الگوریتم از استراتژی پشته برای جستجو و بازیابی داده‌ها استفاده می‌کند. DFS روی یک گراف یا درخت، از یک گره شروع به حرکت می‌کند، تا زمانی که به یک نقطه پایانی برسد، سپس به عقب برگشته و ادامه می‌دهد.
+The DFS (Depth-First Search) algorithm is one of the graph and tree search algorithms that operates in a depth-first manner. This algorithm uses a stack strategy for searching and retrieving data. DFS on a graph or tree starts from one node, moves forward until it reaches an endpoint, then backtracks and continues.
 
-در پیاده‌سازی الگوریتم DFS با استفاده از پایتون، می‌توانید از یک ساختار داده گراف و پشته یا بازگشت در پایتون استفاده کنید. در زیر یک نمونه کد پایتون برای الگوریتم DFS آمده است:
+In the implementation of the DFS algorithm using Python, you can use a graph data structure and a stack or recursion in Python. Below is a sample Python code for the DFS algorithm:
 
 ```python
 def dfs(graph, start, visited=None):
     if visited is None:
         visited = set()
     visited.add(start)
-    print(start)  # چاپ گره فعلی
+    print(start)  # Print the current node
     for neighbour in graph[start] - visited:
         dfs(graph, neighbour, visited)
     return visited
 
-# گراف مثال
+# Example graph
 graph = {0: {1, 2}, 1: {2}, 2: {3}, 3: {1, 2}}
 dfs(graph, 0)
-
 ```
 
-در این کد، dfs تابعی است که DFS را بر روی یک گراف پیاده‌سازی می‌کند. برای هر گره، از مجموعه visited برای نگهداری گره‌های بازدیدشده استفاده می‌شود و به صورت بازگشتی پیمایش DFS انجام می‌شود. در این مثال، یک گراف ساده تعریف شده و DFS از گره شماره 0 شروع می‌شود.
+In this code, the `dfs` function implements DFS on a graph. For each node, the `visited` set is used to keep track of visited nodes, and the DFS traversal is performed recursively. In this example, a simple graph is defined and DFS starts from node 0.
 
-با اجرای این کد، خروجی مرتبط با پیمایش DFS در گراف مشخص شده چاپ خواهد شد. این کد نشان‌دهنده اصول عمومی الگوریتم DFS برای پیمایش گراف در پایتون است.
+By running this code, the output related to the DFS traversal in the specified graph will be printed. This code demonstrates the general principles of the DFS algorithm for graph traversal in Python.
 
+Let me know if there is anything else I can assist you with!
